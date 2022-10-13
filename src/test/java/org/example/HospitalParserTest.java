@@ -35,6 +35,25 @@ class HospitalParserTest {
 
 
     @Test
+    @DisplayName("sql 쿼리가 잘 됩니다.")
+    void makeSqlQueryTest() {
+        HospitalParser hospitalParser = new HospitalParser();
+        Hospital hospital = hospitalParser.parse(this.line1);
+        assertHospital(hospitalParser.parse(this.line1),
+                "A1120837","서울특별시 금천구 벚꽃로 286 삼성리더스타워 111~114호 (가산동)","서울특별시 금천구","C",2,"가산기대찬의원","");
+        String sql = String.format("INSERT INTO `hospital`.`seoul_hospital`\n" +
+                "(`id`,\n" + "`address`,\n" + "`district`,\n" + "`category`,\n" + "`emergency_room`,\n" + "`name`,\n" + "`subdivision`)\n" +
+                "VALUES\n" +
+                "(\"A1120837\",\n" +
+                "\"서울특별시 금천구 벚꽃로 286 삼성리더스타워 111~114호 (가산동)\",\n" +
+                "\"서울특별시 금천구\",\n" +
+                "\"C\",\n" +
+                "2,\n" +
+                "\"가산기대찬의원\",\n" +
+                "\"\");");
+    }
+
+    @Test
     @DisplayName("파싱이 잘 됩니다.")
     void hospitalParsing() {
         HospitalParser hospitalParser = new HospitalParser();
@@ -47,6 +66,8 @@ class HospitalParserTest {
 
         assertHospital(hospitalParser.parse(this.line2),
                 "A1117873","서울특별시 관악구 신원로 38 5층 (신림동 청암빌딩)","서울특별시 관악구","N",2,"가로수치과의원","치과");
+
+
 
     }
 }
