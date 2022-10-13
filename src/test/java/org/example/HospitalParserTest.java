@@ -32,5 +32,8 @@ class HospitalParserTest {
 
         //name
         Assertions.assertEquals("가산기대찬의원", hospital.getName());
+
+        //subdivision
+        Assertions.assertEquals("", hospital.getSubdivision());
     }
 }

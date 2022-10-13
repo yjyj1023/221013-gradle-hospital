@@ -48,5 +48,8 @@ public class Hospital {
     public String getName() {
 return name;
     }
+    public String getSubdivision() {
+        return subdivision;
+    }
 
 }
