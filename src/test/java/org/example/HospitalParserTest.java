@@ -23,5 +23,14 @@ class HospitalParserTest {
 
         //district
         Assertions.assertEquals("서울특별시 금천구", hospital.getDistrict());
+
+        //category
+        Assertions.assertEquals("C", hospital.getCategory());
+
+        //emergencyRoom
+        Assertions.assertEquals(2, hospital.getEmergencyRoom());
+
+        //name
+        Assertions.assertEquals("가산기대찬의원", hospital.getName());
     }
 }

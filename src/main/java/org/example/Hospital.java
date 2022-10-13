@@ -36,9 +36,17 @@ public class Hospital {
     public String getAddress() {
         return address;
     }
-
     public String getDistrict() {
         return district;
+    }
+    public String getCategory() {
+        return category;
+    }
+    public int getEmergencyRoom() {
+        return emergencyRoom;
+    }
+    public String getName() {
+return name;
     }
 
 }
