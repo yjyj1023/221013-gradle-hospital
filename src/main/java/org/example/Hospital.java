@@ -9,11 +9,20 @@ public class Hospital {
     private String name; // snake camel
     private String subdivision; // snake camel
 
+    public Hospital(String id, String address) {
+        this.id = id;
+        this.address = address;
+    }
+
     public Hospital(String id) {
         this.id = id.replaceAll("\"","");
+
     }
 
     public String getId() {
         return id;
+    }
+    public String getAddress() {
+        return address;
     }
 }
